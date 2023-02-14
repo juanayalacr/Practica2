@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/nombre_cliente"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_cliente"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/productos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/productos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_cliente"/>
+
+    <RadioGroup
+
+        android:id="@+id/platillos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productos">
+
+        <CheckBox
+            android:id="@+id/pizza_indv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pizza_individual"/>
+
+        <CheckBox
+            android:id="@+id/pizza_fam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pizza_familiar"/>
+
+        <CheckBox
+            android:id="@+id/boneless_indv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/boneless_individuales"/>
+
+        <CheckBox
+            android:id="@+id/boneless_comp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/boneless_p_compartir"/>
+
+        <CheckBox
+            android:id="@+id/burguer_sen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hamburguesa_sencilla"/>
+
+        <CheckBox
+            android:id="@+id/burguer_dbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hamburguesa_doble"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/direccion_envio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a_que_municipio_ser_el_env_o"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/platillos"/>
+
+    <Spinner
+        android:id="@+id/municipio"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/direccion_envio" />
+
+    <Button
+        android:id="@+id/calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calcular_precio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/municipio"/>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Precio Final: $100"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calcular"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
